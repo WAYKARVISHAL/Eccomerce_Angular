@@ -1,0 +1,27 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 shadow-text text-center mt-3">
+      <h1>{{cat_name}} Products</h1>
+      </div>
+      <ng-container *ngFor="let row of products;let i=index;">
+          <div class="col-md-3 mt-4" *ngIf="i < 8"  >
+            <div class="card " style="margin-top: 10px; height: 390px;" routerLink="/product-info/{{row.product_tbl_id}}" >
+              <div class="card-content ">
+
+                  <div style="height: 250px; overflow: hidden; border:none ">
+                    <img [src]="row.product_img" width="100%" >
+                  </div>
+                  </div>
+                  <div class="card-footer" style="height: 200px;">
+                  <h5 style=" font-family: sans-serif;">{{row.product_name}}</h5>
+                  <h5 class="">&#8377;{{row.price}}/-</h5>
+
+              </div>
+            </div>
+
+          </div>
+    </ng-container>
+    </div>
+  </div>

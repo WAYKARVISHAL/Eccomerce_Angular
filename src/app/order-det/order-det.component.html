@@ -1,0 +1,61 @@
+<app-navbar></app-navbar><br><br>
+<div class="container" *ngIf="order_info" style="font-weight: 100;">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 style="font-weight: 100;">order_details</h1>
+            <h1 style="font-weight: 100;">order Number: -{{order_info.product_order_id}}</h1>
+            <h1 style="font-weight: 100;">order Date: -{{order_info.entry_date |date}}</h1>
+            <h1 style="font-weight: 100;">order address: -{{order_info.city}}</h1><hr>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-12 mt-5">
+            <h1 style="border-bottom: 1px solid grey;padding-bottom: 10;">Billing info</h1>
+        </div>
+        <div class="col-md-6">
+            ship To
+            <h4 style="font-weight: 100;">
+                {{order_info.area}},
+                {{order_info.state}},
+                {{order_info.country}},
+                {{order_info.district}}-
+                {{order_info.pincode}}
+
+            </h4>
+        </div>
+        <div class="col-md-6">
+            Payment_mode
+            <h4 style="font-weight: 100;">
+                {{order_info.payment_type}}
+            </h4>
+        </div>
+        <div class="col-md-12 mt-5">
+            <h1 style="border-bottom: 1px solid grey;padding-bottom: 10;">Billing info</h1>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-border table-hover">
+                <tr>
+                    <th colspan="2">product</th>
+                    <th>price</th>
+                    <th>qty</th>
+                    <th>total</th>
+                </tr>
+                <tr *ngFor="let row of order_product">
+                    <td><img [src]="row.product_img" width="40px"></td>
+                    <td>{{row.product_name}}</td>
+                    <td>{{row.price|currency:'INR'}}</td>
+                    <td>{{row.qty}}Qty</td>
+                    <td>{{row.price*row.qty|currency:'INR'}}</td>
+                </tr>
+                <tr>
+                    <th colspan="4">
+                       Total
+                    </th>
+                    <th>
+                        {{order_info.ttl_amount|currency:'INR'}}
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

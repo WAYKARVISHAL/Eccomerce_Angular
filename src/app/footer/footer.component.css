@@ -1,0 +1,72 @@
+.ecommerce-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.ecommerce-footer h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.ecommerce-footer p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer Links */
+.ecommerce-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ecommerce-footer ul li {
+    margin-bottom: 10px;
+}
+
+.ecommerce-footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ecommerce-footer ul li a:hover {
+    color: #f2f2f2;
+}
+
+/* Contact Information */
+.ecommerce-footer strong {
+    color: #f2f2f2;
+}
+
+/* Social Media Icons */
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f2f2f2;
+}
+
+/* Copyright Information */
+.ecommerce-footer hr {
+    border-color: #777;
+    margin-top: 20px;
+}
+
+.ecommerce-footer p.text-center {
+    font-size: 12px;
+}
+

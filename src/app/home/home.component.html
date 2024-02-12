@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item " *ngFor="let row of slider;let i =index;" [class.active]="i==0">
+        <img class="d-block w-100 col-md-12  " [src]="row.slider_img" alt="First slide"> 
+      </div>
+     
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 shadow-text">
+      New Products
+      </div>
+      <ng-container *ngFor="let row of products;let i=index;">
+          <div class="col-md-3 mt-4" *ngIf="i < 8"  >
+            <div class="card " style="margin-top: 10px; height: 390px;" routerLink="/product-info/{{row.product_tbl_id}}">
+              <div class="card-content ">
+
+                  <div style="height: 250px; overflow: hidden; border:none ">
+                    <img [src]="row.product_img" width="100%" >
+                  </div>
+                  </div>
+                  <div class="card-footer" style="height: 200px;">
+                  <h5 style=" font-family: sans-serif;">{{row.product_name}}</h5>
+                  <h5 class="">&#8377;{{row.price}}/-</h5>
+
+              </div>
+            </div>
+
+          </div>
+    </ng-container>
+    </div>
+  </div>
+  <app-footer></app-footer>

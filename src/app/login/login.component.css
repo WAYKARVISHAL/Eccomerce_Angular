@@ -1,0 +1,22 @@
+.login-button {
+    display: inline-block;
+    padding: 6px 30px; /* Adjust padding for button size */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded shape */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+   /* Uppercase text */
+    letter-spacing: 1px; /* Letter spacing for emphasis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.login-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+    transform: scale(1.05); /* Slight scaling on hover for depth */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced box shadow on hover */
+}

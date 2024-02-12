@@ -1,0 +1,158 @@
+
+<style>
+
+:root {
+    --primary: #86B817;
+    --secondary: #FE8800;
+    --light: #F5F5F5;
+    --dark: #14141F;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+
+
+/*** Navbar ***/
+.navbar-light .navbar-nav .nav-link {
+    font-family: sans-serif;
+    position: relative;
+    margin-right: 25px;
+    padding: 25px 0;
+    color: #FFFFFF !important;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: .5s;
+    
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--success) !important;
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: #ffffff;
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--dark) !important;
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: var(--success);
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+    
+}
+</style>
+<body>
+    
+    <br><br>
+<div class="container-fluid position-relative p-0 ">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-black" style="height: 60px;"  >
+    <a href="" class="navbar-brand p-0">
+     <img src="https://a2zithub.org/student/uploads/166885394139593275.png" height="40px">
+    
+    
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-nav " id="navbarSupportedContent">
+      <ul class="navbar-nav md-auto ml-1 mt-2 ">
+        <li class="nav-item active ">
+          <a class="nav-link text-white font-weight-bold  h5 vish " routerLink="/" >Home </a>
+        </li>
+        
+        <li class="nav-item" *ngFor="let row of catlist">
+          <a class="nav-link  text-white  ml-1 font-weight-bold h5 vish " href=""  routerLink="cat-products/{{row.cat_id}}/{{row.cat_name}}`">{{row.cat_name}} </a>
+        </li>
+        
+      </ul>
+
+      <button class="btn btn-dark dark ml-md-auto mr-2 login-button"  routerLink="/login" style="line-height: 19px;" *ngIf="!token">login</button>
+      <button class="btn btn-dark dark mr-3  mt-2 mt-md-0 login-button " routerLink="/register" style="line-height: 19px;"  *ngIf="!token">Register</button>
+      <button class="btn btn-dark dark ml-md-auto mr-2 login-button"   style="line-height: 19px;" *ngIf="token" (click)="logout()">logout</button>
+      <button *ngIf="token" class="btn btn-dark " routerLink="/card" ><i class=" fa fa-shopping-cart"></i>cart</button>
+      <button class="btn btn-dark mr-2 ml-2 hide_print" routerLink="/myorder">Myorder</button>
+    </div>
+  </nav>
+</div>

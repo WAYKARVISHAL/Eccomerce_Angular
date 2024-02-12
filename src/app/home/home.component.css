@@ -1,0 +1,40 @@
+/* Style the text with a shadow font effect */
+.shadow-text {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333; /* Text color */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); /* Shadow properties */
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    text-align-last: center;
+    text-shadow: 5px 2px green;
+}
+.card {
+    /* width: 300px; */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 6px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    margin: 20px auto;
+}
+
+/* Card hover animation */
+.card:hover {
+    transform: translateY(-6px); /* Move the card up by 5 pixels on hover */
+}
+
+/* Card content styles */
+.card-content {
+    padding: 20px;
+}
+
+.card-footer h5:hover {
+   font-weight: bold;
+   color: royalblue;
+}
+
+
